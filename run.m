@@ -1,4 +1,4 @@
-f=load('bbc_seg14of4.mat');%=load('C:\Users\User\Desktop\research\multiviewlearning\shiguoxin\bbc_seg14of4.mat');
+f=load('Reuters.mat');%=load('C:\Users\User\Desktop\research\multiviewlearning\shiguoxin\bbc_seg14of4.mat');
 data=f.data;
 label=f.labels;
 % addpath('C:\Users\User\Desktop\research\kernelclusteringexp')
@@ -16,7 +16,7 @@ for i=1:length(para1)
     for j=1:length(para2)
         for k=1:length(para3)
             result=multigraph(data,label,para1(i),para2(j),para3(k))
-            dlmwrite('bbc_seg14of4.txt',[para1(i) para2(j) para3(k) result(1,:) result(2,:) result(3,:)   ],'-append','delimiter','\t','newline','pc');
+            dlmwrite('reuters.txt',[para1(i) para2(j) para3(k) result(1,:) result(2,:) result(3,:)   ],'-append','delimiter','\t','newline','pc');
         end
     end
 end
